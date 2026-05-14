@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palak Patel — IT Professional Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B3A5C;--accent:#2563A8;--light:#EEF4FB;--mid:#6B7C93;--soft:#F6F8FC;--border:#DDE5EE;--white:#fff;--text:#1A1A2E;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--soft);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+header{background:var(--navy);padding:3.5rem 1.5rem 2.8rem;text-align:center;}
+.avatar{width:72px;height:72px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:26px;color:#fff;margin:0 auto 1.2rem;border:3px solid rgba(255,255,255,0.18);}
+header h1{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,5vw,2.8rem);color:#fff;font-weight:400;letter-spacing:-0.02em;margin-bottom:0.3rem;}
+.role{font-size:0.9rem;color:rgba(255,255,255,0.6);letter-spacing:0.04em;margin-bottom:1.4rem;}
+.contact-bar{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:1.2rem;}
+.contact-bar a{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);padding:5px 13px;border-radius:20px;font-size:0.8rem;border:1px solid rgba(255,255,255,0.15);}
+.contact-bar a:hover{background:rgba(255,255,255,0.18);text-decoration:none;}
+.open-badge{display:inline-block;background:#16A34A;color:#fff;font-size:0.74rem;font-weight:500;padding:4px 12px;border-radius:20px;}
+main{max-width:820px;margin:0 auto;padding:2rem 1.2rem;}
+.cert-hero{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:10px;padding:1.3rem 1.5rem;display:flex;align-items:center;gap:1.2rem;margin-bottom:1.8rem;flex-wrap:wrap;}
+.cert-icon{font-size:2rem;flex-shrink:0;}
+.cert-hero h2{font-size:0.95rem;font-weight:500;color:var(--navy);margin-bottom:2px;}
+.cert-hero p{font-size:0.82rem;color:var(--mid);}
+.score-pill{margin-left:auto;background:var(--light);border-radius:8px;padding:0.6rem 1rem;text-align:center;flex-shrink:0;}
+.score-pill .num{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--navy);}
+.score-pill .lbl{font-size:0.7rem;color:var(--mid);}
+section{margin-bottom:2.2rem;}
+section h2{font-family:'DM Serif Display',serif;font-size:1.3rem;font-weight:400;color:var(--navy);margin-bottom:0.9rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border);}
+.summary-text{font-size:0.92rem;color:#38385a;line-height:1.82;}
+.hl{color:var(--navy);font-weight:500;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:1.1rem 0;}
+.stat{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:0.9rem;text-align:center;}
+.stat .n{font-family:'DM Serif Display',serif;font-size:1.7rem;color:var(--navy);}
+.stat .l{font-size:0.75rem;color:var(--mid);margin-top:2px;}
+.job{margin-bottom:1.3rem;}
+.job-head{display:flex;align-items:flex-start;gap:10px;margin-bottom:5px;}
+.jdot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:7px;}
+.job-title{font-weight:500;font-size:0.92rem;color:var(--navy);}
+.job-co{font-size:0.82rem;color:var(--mid);}
+.job-date{font-size:0.78rem;color:var(--mid);margin-left:auto;white-space:nowrap;}
+.job-bullets{padding-left:19px;}
+.job-bullets li{font-size:0.85rem;color:#38385a;margin-bottom:3px;}
+.skill-grid{display:flex;flex-wrap:wrap;gap:7px;}
+.chip{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:4px 13px;font-size:0.8rem;}
+.chip.k{background:var(--light);border-color:#b8cde8;color:var(--navy);font-weight:500;}
+.proj{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.4rem;margin-bottom:11px;border-left:4px solid var(--accent);}
+.proj.teal{border-left-color:#1D9E75;}
+.proj.purple{border-left-color:#7F77DD;}
+.proj.amber{border-left-color:#BA7517;}
+.proj h3{font-size:0.93rem;font-weight:500;color:var(--navy);margin-bottom:3px;}
+.proj .meta{font-size:0.78rem;color:var(--mid);margin-bottom:7px;}
+.proj p{font-size:0.85rem;color:#38385a;line-height:1.65;}
+.tag-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px;}
+.tag{font-size:0.72rem;padding:2px 9px;border-radius:10px;border:1px solid var(--border);color:var(--mid);}
+.ip{display:inline-block;font-size:0.7rem;font-weight:500;background:#FEF3C7;color:#92400E;padding:2px 7px;border-radius:8px;margin-left:7px;vertical-align:middle;}
+.planned{background:#F3F4F6;color:#374151;}
+.cred-row{display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid var(--border);}
+.cred-row:last-child{border-bottom:none;}
+.cred-ico{font-size:1.1rem;width:28px;text-align:center;flex-shrink:0;}
+.cred-name{font-size:0.88rem;font-weight:500;color:var(--navy);}
+.cred-sub{font-size:0.78rem;color:var(--mid);}
+.cred-date{margin-left:auto;font-size:0.78rem;color:var(--mid);white-space:nowrap;}
+.pill-blue{font-size:0.7rem;background:#DBEAFE;color:#1e40af;padding:2px 7px;border-radius:8px;font-weight:500;margin-left:6px;}
+.pill-amber{font-size:0.7rem;background:#FEF3C7;color:#92400E;padding:2px 7px;border-radius:8px;font-weight:500;margin-left:6px;}
+footer{background:var(--navy);color:rgba(255,255,255,0.55);text-align:center;padding:1.8rem;font-size:0.8rem;}
+footer a{color:rgba(255,255,255,0.75);}
+@media(max-width:540px){.cert-hero{flex-direction:column;}.score-pill{margin-left:0;}.job-date{display:none;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="avatar">PP</div>
+  <h1>Palak Patel</h1>
+  <div class="role">IT Service Desk Analyst &nbsp;·&nbsp; ITSM &nbsp;·&nbsp; IT Project Coordinator</div>
+  <div class="contact-bar">
+    <a href="mailto:ppalakkumaripatel@gmail.com">ppalakkumaripatel@gmail.com</a>
+    <a href="tel:+14375596115">+1 (437) 559-6115</a>
+    <a href="https://linkedin.com/in/ppalak-patel" target="_blank">LinkedIn ↗</a>
+    <a href="https://www.peoplecert.org/public-profile?ed=XCHu3ZqUTNLJGEsxcb3eVT9fd7e6Nku7" target="_blank">Verify ITIL ↗</a>
+  </div>
+  <span class="open-badge">Open to Work — Hybrid or On-site · Toronto &amp; GTA</span>
+</header>
+
+<main>
+
+  <div class="cert-hero">
+    <div class="cert-icon">🏅</div>
+    <div>
+      <h2>ITIL® 4 Foundation Certificate in IT Service Management</h2>
+      <p>PeopleCert &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; Globally verified</p>
+      <a href="https://www.peoplecert.org/public-profile?ed=XCHu3ZqUTNLJGEsxcb3eVT9fd7e6Nku7" target="_blank">Verify certificate →</a>
+    </div>
+    <div class="score-pill">
+      <div class="num">38/40</div>
+      <div class="lbl">Top 5% globally</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>About</h2>
+    <p class="summary-text">
+      I'm an <span class="hl">ITIL 4 certified IT professional</span> with 3+ years of progressive experience in enterprise service desk operations, IT project coordination, and database administration across Canadian and international environments.<br><br>
+      I've supported <span class="hl">500+ weekly users</span> in high-volume digital operations at McDonald's Canada, coordinated end-to-end IT project delivery at Lambton College, managed escalations at the <span class="hl">Toronto Transit Commission</span> (1.7M+ daily riders), and administered databases for <span class="hl">2,000+ records</span> at 99.9% accuracy. Eligible to work in Canada on an open work permit — no sponsorship required.
+    </p>
+    <div class="stats">
+      <div class="stat"><div class="n">500+</div><div class="l">Weekly users supported</div></div>
+      <div class="stat"><div class="n">2,000+</div><div class="l">Records administered</div></div>
+      <div class="stat"><div class="n">40%</div><div class="l">Processing time reduced</div></div>
+      <div class="stat"><div class="n">99.9%</div><div class="l">Record accuracy</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="job">
+      <div class="job-head">
+        <div class="jdot"></div>
+        <div><div class="job-title">Customer Service Lead – Digital Operations</div><div class="job-co">McDonald's Canada · Toronto, ON</div></div>
+        <div class="job-date">Apr 2025 – Present</div>
+      </div>
+      <ul class="job-bullets">
+        <li>Tier 1/2 technical support for 500+ weekly users — kiosk software escalations, app errors, real-time resolution</li>
+        <li>Structured incident escalation and SLA-aware response during peak windows</li>
+        <li>Recurring issue documentation and knowledge base contribution</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-head">
+        <div class="jdot"></div>
+        <div><div class="job-title">IT Project Coordinator (Work-Integrated Learning)</div><div class="job-co">Lambton College · North York, ON</div></div>
+        <div class="job-date">Sep 2024 – Apr 2025</div>
+      </div>
+      <ul class="job-bullets">
+        <li>End-to-end IT project delivery via Jira — requirements, backlog, milestones, stakeholder sign-off</li>
+        <li>Risk Registers, Knowledge Base articles, SLA reporting documentation</li>
+        <li>Change management SOPs and go-live stakeholder communications</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-head">
+        <div class="jdot"></div>
+        <div><div class="job-title">Customer Service Representative</div><div class="job-co">Toronto Transit Commission (TTC) · Toronto, ON</div></div>
+        <div class="job-date">May – Oct 2023</div>
+      </div>
+      <ul class="job-bullets">
+        <li>High-priority escalations in 24/7 enterprise operations — 1.7M+ daily riders</li>
+        <li>Structured de-escalation and Canadian enterprise workplace fluency</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-head">
+        <div class="jdot"></div>
+        <div><div class="job-title">IT Systems Administrator – Database &amp; Operations</div><div class="job-co">Radiant English Academy · India</div></div>
+        <div class="job-date">Jan 2020 – Mar 2023</div>
+      </div>
+      <ul class="job-bullets">
+        <li>Relational database for 2,000+ records — SQL, anomaly detection, audit reporting, 99.9% accuracy</li>
+        <li>Paper-to-Microsoft 365 migration — 40% reduction in manual processing time</li>
+        <li>RBAC and data backup governance across financial records</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skill-grid">
+      <span class="chip k">ITIL 4 Foundation</span>
+      <span class="chip k">Incident Management</span>
+      <span class="chip k">SLA Reporting</span>
+      <span class="chip k">Change Management</span>
+      <span class="chip k">Service Desk Operations</span>
+      <span class="chip">Knowledge Base Documentation</span>
+      <span class="chip">Jira · Ticketing Systems</span>
+      <span class="chip">SQL · Data Validation</span>
+      <span class="chip">Microsoft 365 · SharePoint</span>
+      <span class="chip">Excel Advanced</span>
+      <span class="chip">RBAC · Data Security</span>
+      <span class="chip">Risk Registers · Audit Reporting</span>
+      <span class="chip">SOP Documentation</span>
+      <span class="chip">Agile · SDLC</span>
+      <span class="chip">Windows OS</span>
+      <span class="chip">Remote Support Tools</span>
+      <span class="chip">Active Directory (Learning)</span>
+      <span class="chip">Azure AZ-900 (In Progress)</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="proj">
+      <h3>IT Service Desk Tracker — Excel + SharePoint <span class="ip">In Progress</span></h3>
+      <div class="meta">Tools: Microsoft Excel · SharePoint · RBAC · ITIL Incident Management framework</div>
+      <p>Mock enterprise service desk tracking system built to the specifications used by IT Support Analyst roles across Canada and the USA. Includes ticket intake (ID, category, priority, assignee, SLA target), pivot table reporting dashboard, conditional SLA breach alerts (red = breached, green = met), and a SharePoint folder with RBAC permissions configured. Accompanied by a documented SOP. Proves hands-on SLA governance, Excel advanced functions, SharePoint administration, and ITIL incident management — the four most consistently requested skills in Canadian and US IT Support Analyst postings.</p>
+      <div class="tag-row">
+        <span class="tag">SLA tracking</span><span class="tag">Excel Pivot Tables</span><span class="tag">SharePoint RBAC</span><span class="tag">Incident management</span><span class="tag">ITIL aligned</span>
+      </div>
+    </div>
+
+    <div class="proj teal">
+      <h3>Active Directory Home Lab — Windows Server <span class="ip">In Progress</span></h3>
+      <div class="meta">Tools: VirtualBox (free) · Windows Server 2019 · Active Directory · DNS · Group Policy Objects</div>
+      <p>Personal home lab simulating a corporate Windows Server environment — Active Directory is the single most requested technical skill in Canadian and US IT Support Analyst postings, appearing in 65%+ of job descriptions at banks, MSPs, and government agencies. Lab includes: domain controller setup, user and group provisioning, Group Policy Object (GPO) configuration, DNS setup, and a documented troubleshooting log with screenshots. Directly closes the most common gap flagged by Canadian IT recruiters for candidates at Palak's experience level.</p>
+      <div class="tag-row">
+        <span class="tag">Active Directory</span><span class="tag">Windows Server 2019</span><span class="tag">Group Policy</span><span class="tag">DNS</span><span class="tag">User provisioning</span><span class="tag">VirtualBox</span>
+      </div>
+    </div>
+
+    <div class="proj purple">
+      <h3>M365 Digital Transformation — Case Study <span class="ip">In Progress</span></h3>
+      <div class="meta">Based on Radiant English Academy (2020–2023) · Tools: draw.io · Google Docs · PDF</div>
+      <p>Written retrospective of a real paper-to-digital migration covering the full change management lifecycle: current-state process map, stakeholder impact assessment, implementation timeline, RBAC rollout, and measurable outcomes (40% processing time reduction, fully auditable system). Formatted as a 2-page PDF case study with before/after process diagrams. Demonstrates change management, SOP documentation, Microsoft 365 administration, and quantified business impact — directly aligned with what IT Project Coordinator and IT Support Analyst hiring managers look for in Canada and the US.</p>
+      <div class="tag-row">
+        <span class="tag">Change management</span><span class="tag">Process mapping</span><span class="tag">Microsoft 365</span><span class="tag">RBAC</span><span class="tag">SOP documentation</span>
+      </div>
+    </div>
+
+    <div class="proj amber">
+      <h3>ServiceNow Developer Instance — ITSM Configuration <span class="ip planned">Planned</span></h3>
+      <div class="meta">Tools: ServiceNow Personal Developer Instance (free) · developer.servicenow.com</div>
+      <p>Hands-on configuration of a personal ServiceNow developer instance to demonstrate ITSM tool proficiency. Planned scope: Incident Management module, Change Management workflow, SLA dashboard, and Knowledge Base articles. ServiceNow appears in 55%+ of Canadian and US ITSM and IT Support postings — hands-on configuration experience differentiates candidates at every level.</p>
+      <div class="tag-row">
+        <span class="tag">ServiceNow</span><span class="tag">Incident lifecycle</span><span class="tag">Change management</span><span class="tag">SLA configuration</span><span class="tag">Knowledge management</span>
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Credentials</h2>
+    <div class="cred-row">
+      <div class="cred-ico">🏅</div>
+      <div>
+        <div class="cred-name">ITIL® 4 Foundation — IT Service Management <span class="pill-blue">38/40 · Top 5%</span></div>
+        <div class="cred-sub">PeopleCert &nbsp;·&nbsp; <a href="https://www.peoplecert.org/public-profile?ed=XCHu3ZqUTNLJGEsxcb3eVT9fd7e6Nku7" target="_blank">Verify certificate →</a></div>
+      </div>
+      <div class="cred-date">April 2026</div>
+    </div>
+    <div class="cred-row">
+      <div class="cred-ico">☁️</div>
+      <div>
+        <div class="cred-name">Microsoft Azure Fundamentals — AZ-900 <span class="pill-amber">In Progress</span></div>
+        <div class="cred-sub">Microsoft</div>
+      </div>
+      <div class="cred-date">Expected Sep 2026</div>
+    </div>
+    <div class="cred-row">
+      <div class="cred-ico">🎓</div>
+      <div>
+        <div class="cred-name">Postgraduate Diploma — IT Project Management</div>
+        <div class="cred-sub">Lambton College, Canada</div>
+      </div>
+      <div class="cred-date">2025</div>
+    </div>
+    <div class="cred-row">
+      <div class="cred-ico">🎓</div>
+      <div>
+        <div class="cred-name">BSc Computer Science</div>
+        <div class="cred-sub">Veer Narmad South Gujarat University, India</div>
+      </div>
+      <div class="cred-date">2021</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Palak Patel &nbsp;·&nbsp; Toronto, ON &nbsp;·&nbsp; Open Work Permit — No Sponsorship Required</p>
+  <p style="margin-top:6px;">
+    <a href="mailto:ppalakkumaripatel@gmail.com">ppalakkumaripatel@gmail.com</a>
+    &nbsp;·&nbsp;
+    <a href="https://linkedin.com/in/ppalak-patel" target="_blank">linkedin.com/in/ppalak-patel</a>
+  </p>
+</footer>
+
+</body>
+</html>
